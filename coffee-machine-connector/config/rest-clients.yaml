@@ -1,0 +1,11 @@
+# yaml-language-server: $schema=https://json-schema.axonivy.com/app/12.0.0/rest-clients.json
+RestClients:
+  CoffeeMachineStatus:
+    UUID: dab47be9-6ffe-4459-8171-10a2510a1c8a
+    Url: http://localhost:8081/designer/api/getCoffeeMachineStatus
+    Features:
+    - ch.ivyteam.ivy.rest.client.mapper.JsonFeature
+    - ch.ivyteam.ivy.rest.client.authentication.HttpBasicAuthenticationFeature
+    Properties:
+      username: Developer
+      password: ${decrypt:RBd9x00+fshaqUKmWLPOPQ==}

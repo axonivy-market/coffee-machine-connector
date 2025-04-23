@@ -1,0 +1,38 @@
+import coffee.machine.connector.GetCoffeeSuggestionData;
+
+dialect "mvel"
+
+rule "Night Owl Tea"
+when
+    $data : GetCoffeeSuggestionData(hour >= 23 || hour < 6)
+then
+    $data.coffeeSuggestion = "Herbal Tea";
+end
+
+rule "Early Bird Espresso"
+when
+    $data : GetCoffeeSuggestionData(hour >= 6 && hour < 11)
+then
+    $data.coffeeSuggestion = "Espresso";
+end
+
+rule "Midday Cappuccino"
+when
+    $data : GetCoffeeSuggestionData(hour >= 11 && hour < 15)
+then
+    $data.coffeeSuggestion = "Cappuccino";
+end
+
+rule "Afternoon Flat White"
+when
+    $data : GetCoffeeSuggestionData(hour >= 15 && hour < 18)
+then
+    $data.coffeeSuggestion = "Flat White";
+end
+
+rule "Evening Decaf"
+when
+    $data : GetCoffeeSuggestionData(hour >= 18 && hour < 23)
+then
+    $data.coffeeSuggestion = "Decaf";
+end

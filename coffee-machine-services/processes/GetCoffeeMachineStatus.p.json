@@ -1,0 +1,61 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
+  "id" : "1962F5F7D2919F75",
+  "kind" : "CALLABLE_SUB",
+  "config" : {
+    "data" : "com.axonivy.connector.coffeemachine.services.GetCoffeeMachineStatusData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "CallSubStart",
+      "name" : "call()",
+      "config" : {
+        "signature" : "call",
+        "result" : {
+          "params" : [
+            { "name" : "status", "type" : "String", "desc" : "" }
+          ],
+          "map" : {
+            "result.status" : "in.status"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 }
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f3" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "CallSubEnd",
+      "visual" : {
+        "at" : { "x" : 360, "y" : 64 },
+        "labelOffset" : { "x" : 13, "y" : 33 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "Script",
+      "name" : "Get Coffee Machine Status",
+      "config" : {
+        "output" : {
+          "code" : [
+            "import java.time.LocalDateTime;",
+            "",
+            "int minute = LocalDateTime.now().getMinute();",
+            "out.status = (minute % 2 == 0) ? \"Online\" : \"Offline\";"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 232, "y" : 64 },
+        "description" : [
+          "When minute counter is even -> Status : Online",
+          "Else -> Status : Offline"
+        ]
+      },
+      "connect" : [
+        { "id" : "f4", "to" : "f1", "color" : "default" }
+      ]
+    } ]
+}
