@@ -1,0 +1,8 @@
+# yaml-language-server: $schema=https://json-schema.axonivy.com/app/12.0.0/variables.json
+Variables:
+  CoffeeMachine:
+    # The Username used for authenticating to the coffee-machine rest service.
+    Username: Developer
+    # The password used for authenticating to the coffee-machine rest service.
+    #[password]
+    Password: ${decrypt:lo1DT35LNy1MmyQ3OmFbvv07kWQSJI6rA7WlKA1LnqU=}

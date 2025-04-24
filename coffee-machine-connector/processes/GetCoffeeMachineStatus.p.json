@@ -1,0 +1,70 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
+  "id" : "195D4AE1B497A1CF",
+  "kind" : "CALLABLE_SUB",
+  "config" : {
+    "data" : "com.axonivy.connector.coffeemachine.connector.GetCoffeeMachineStatusData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "CallSubStart",
+      "name" : "call()",
+      "config" : {
+        "signature" : "call",
+        "result" : {
+          "params" : [
+            { "name" : "machineStatus", "type" : "String", "desc" : "" }
+          ],
+          "map" : {
+            "result.machineStatus" : "in.status"
+          }
+        }
+      },
+      "tags" : [
+        "connector"
+      ],
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 },
+        "icon" : "res:/webContent/icons/status.png?small"
+      },
+      "connect" : [
+        { "id" : "f4", "to" : "f2" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "CallSubEnd",
+      "visual" : {
+        "at" : { "x" : 352, "y" : 64 },
+        "labelOffset" : { "x" : 13, "y" : 33 }
+      }
+    }, {
+      "id" : "f2",
+      "type" : "RestClientCall",
+      "name" : "Get Coffee Machine Status",
+      "config" : {
+        "target" : {
+          "clientId" : "dab47be9-6ffe-4459-8171-10a2510a1c8a"
+        },
+        "response" : {
+          "entity" : {
+            "type" : "com.fasterxml.jackson.databind.JsonNode",
+            "map" : {
+              "out.status" : "result.get(\"status\").asText()"
+            }
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 224, "y" : 64 },
+        "description" : [
+          "When minute counter is",
+          "Even -> Status : Online",
+          "Else  -> Status : Offline"
+        ],
+        "icon" : "res:/webContent/icons/status.png"
+      },
+      "connect" : [
+        { "id" : "f5", "to" : "f1" }
+      ]
+    } ]
+}
