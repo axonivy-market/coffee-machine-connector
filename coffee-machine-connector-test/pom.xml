@@ -3,21 +3,28 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.axonivy.connector.coffeemachine</groupId>
-  <artifactId>coffee-machine-connector</artifactId>
-  <version>12.0.0-SNAPSHOT</version>
+  <artifactId>coffee-machine-connector-test</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
   <packaging>iar</packaging>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   <dependencies>
     <dependency>
+      <groupId>com.axonivy.ivy.test</groupId>
+      <artifactId>unit-tester</artifactId>
+      <version>12.0.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
       <groupId>com.axonivy.connector.coffeemachine</groupId>
-      <artifactId>coffee-machine-services</artifactId>
-      <version>${project.version}</version>
+      <artifactId>coffee-machine-connector-demo</artifactId>
+      <version>12.0.0-SNAPSHOT</version>
       <type>iar</type>
     </dependency>
   </dependencies>
   <build>
+    <testSourceDirectory>src_test</testSourceDirectory>
     <plugins>
       <plugin>
         <groupId>com.axonivy.ivy.ci</groupId>

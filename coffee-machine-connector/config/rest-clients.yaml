@@ -2,10 +2,11 @@
 RestClients:
   CoffeeMachineStatus:
     UUID: dab47be9-6ffe-4459-8171-10a2510a1c8a
-    Url: http://localhost:8081/designer/api/getCoffeeMachineStatus
+    Url: '{ivy.app.baseurl}/api/getCoffeeMachineStatus/'
+    Icon: res:/webContent/icons/coffee-cup.png
     Features:
     - ch.ivyteam.ivy.rest.client.mapper.JsonFeature
     - ch.ivyteam.ivy.rest.client.authentication.HttpBasicAuthenticationFeature
     Properties:
-      username: Developer
-      password: ${decrypt:RBd9x00+fshaqUKmWLPOPQ==}
+      username: ${ivy.var.CoffeeMachine.Username}
+      password: ${decrypt:08TvX/s78i8rfYf4ItUA4u3D6tT2z7n00c55otvI4v854uwO9m6uRSjXZRVrYsRN}

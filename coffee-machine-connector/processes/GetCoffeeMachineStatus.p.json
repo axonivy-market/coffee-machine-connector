@@ -60,7 +60,8 @@
           "When minute counter is",
           "Even -> Status : Online",
           "Else  -> Status : Offline"
-        ]
+        ],
+        "icon" : "res:/webContent/icons/status.png"
       },
       "connect" : [
         { "id" : "f5", "to" : "f1" }
