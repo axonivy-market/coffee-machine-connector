@@ -1,11 +1,14 @@
 # CoffeeMachine Connector
 
-This Connector is part of our Onboarding Tutorial that show you how to use the Axon Ivy Desigers.
-The connector simulates a coffee maschine and will be integrated into our coffee order example processes. 
+The **CoffeeMachine Connector** is part of our **Onboarding Tutorial**, designed to guide you through using the **Axon Ivy Designer**.
 
-You can find the Tutorial here: [Axon Ivy Tutorials](https://www.axonivy.com/tutorials)
+This connector simulates a coffee machine and is integrated into our **Coffee Order** example processes.
 
+🔗 **Explore the full tutorial here:** [Axon Ivy Tutorials](https://www.axonivy.com/tutorials)
+
+---
 
 ## Demo
 
-You can find the tutorial, that this dummy connector is part of here https://www.axonivy.com/tutorials
+This dummy connector is used in the tutorial available at:  
+[https://www.axonivy.com/tutorials](https://www.axonivy.com/tutorials)
