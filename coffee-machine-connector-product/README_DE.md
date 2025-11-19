@@ -1,17 +1,19 @@
-# CoffeeMachine Anschluss
+# CoffeeMachine Connector
 
-Das **CoffeeMachine Anschluss** ist Teil von unser **Onboarding #Tutorium**,
-gestaltet zu steuern dir durch benutzen das **#Axon Efeu Designer**.
+Der CoffeeMachine Connector **CoffeeMachine Connector** ist Teil unseres
+Onboarding-Tutorials **Onboarding Tutorial**, das Sie durch die Verwendung des
+Axon Ivy Designers **Axon Ivy Designer** führt.
 
-Dieser Anschluss spielt eine Kaffeemaschine und ist integriert hinein unser
-**Kaffee Befehl** Beispiel Arbeitsgänge.
+Dieser Konnektor simuliert eine Kaffeemaschine und ist in unsere
+Beispielprozesse „ **” und „Coffee Order”** integriert.
 
-🔗 **Erkundet hier das volle #Tutorium:** [#Axon Efeu
-#Tutorium](https://www.axonivy.com/tutorials)
+🔗 **Das vollständige Tutorial finden Sie hier:** [Axon Ivy
+Tutorials](https://www.axonivy.com/tutorials)
 
 ---
 
 ## Demo
 
-Dieser Dummkopf Anschluss ist benutzt in dem #Tutorium verfügbar an:\
-[Https://www.axonivy.com/#Tutorium](https://www.axonivy.com/tutorials)
+Dieser Dummy-Connector wird im Tutorial verwendet, das unter folgender Adresse
+verfügbar ist:\
+[https://www.axonivy.com/tutorials](https://www.axonivy.com/tutorials)
