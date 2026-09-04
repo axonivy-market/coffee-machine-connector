@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-2.json",
   "id" : "195D4AE1B497A1CF",
   "kind" : "CALLABLE_SUB",
   "config" : {
@@ -47,7 +47,7 @@
         },
         "response" : {
           "entity" : {
-            "type" : "com.fasterxml.jackson.databind.JsonNode",
+            "type" : "tools.jackson.databind.JsonNode",
             "map" : {
               "out.status" : "result.get(\"status\").asText()"
             }
