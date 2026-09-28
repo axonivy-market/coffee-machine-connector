@@ -34,25 +34,9 @@
       "id" : "f1",
       "type" : "CallSubEnd",
       "visual" : {
-        "at" : { "x" : 532, "y" : 64 },
+        "at" : { "x" : 528, "y" : 64 },
         "labelOffset" : { "x" : 13, "y" : 33 }
       }
-    }, {
-      "id" : "f3",
-      "type" : "ProgramInterface",
-      "name" : "Suggest a coffee or tea",
-      "config" : {
-        "userConfig" : {
-          "namespace" : "com.axonivy.connector.coffeemachine.connector",
-          "dataObject" : "in"
-        }
-      },
-      "visual" : {
-        "at" : { "x" : 404, "y" : 64 }
-      },
-      "connect" : [
-        { "id" : "f4", "to" : "f1", "color" : "default" }
-      ]
     }, {
       "id" : "f5",
       "type" : "Script",
@@ -70,7 +54,34 @@
         "at" : { "x" : 232, "y" : 64 }
       },
       "connect" : [
-        { "id" : "f6", "to" : "f3", "color" : "default" }
+        { "id" : "f6", "to" : "f7", "color" : "default" }
+      ]
+    }, {
+      "id" : "f7",
+      "type" : "Script",
+      "name" : "Suggest a coffee or tea",
+      "config" : {
+        "output" : {
+          "code" : [
+            "if (out.hour >= 23 || out.hour < 6) {",
+            "  out.coffeeSuggestion = \"Herbal Tea\";",
+            "} else if (out.hour >= 6 && out.hour < 11) {",
+            "  out.coffeeSuggestion = \"Espresso\";",
+            "} else if (out.hour >= 11 && out.hour < 15) {",
+            "  out.coffeeSuggestion = \"Cappuccino\";",
+            "} else if (out.hour >= 15 && out.hour < 18) {",
+            "  out.coffeeSuggestion = \"Flat White\";",
+            "} else {",
+            "  out.coffeeSuggestion = \"Decaf\";",
+            "}"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 392, "y" : 64 }
+      },
+      "connect" : [
+        { "id" : "f8", "to" : "f1" }
       ]
     } ]
 }
