@@ -49,7 +49,7 @@
           "entity" : {
             "type" : "tools.jackson.databind.JsonNode",
             "map" : {
-              "out.status" : "result.get(\"status\").asText()"
+              "out.status" : "result.get(\"status\").asString()"
             }
           }
         }
