@@ -1,0 +1,11 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0/project/data-class.json",
+  "simpleName" : "GetCoffeeSuggestionData",
+  "namespace" : "com.axonivy.connector.coffeemachine.connector",
+  "fields" : [ {
+    "name" : "hour",
+    "type" : "Number"
+  }, {
+    "name" : "coffeeSuggestion"
+  } ]
+}
