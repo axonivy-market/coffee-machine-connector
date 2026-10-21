@@ -1,0 +1,8 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0/project/data-class.json",
+  "simpleName" : "DemoCoffeeMachineData",
+  "namespace" : "com.axonivy.connector.coffeemachine.demo",
+  "fields" : [ {
+    "name" : "status"
+  } ]
+}

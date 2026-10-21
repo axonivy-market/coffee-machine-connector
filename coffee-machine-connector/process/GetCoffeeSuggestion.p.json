@@ -1,0 +1,87 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0/project/process.json",
+  "id" : "195D4AFC8ABF78B8",
+  "kind" : "CALLABLE_SUB",
+  "config" : {
+    "data" : "com.axonivy.connector.coffeemachine.connector.GetCoffeeSuggestionData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "CallSubStart",
+      "name" : "call()",
+      "config" : {
+        "signature" : "call",
+        "result" : {
+          "params" : [
+            { "name" : "coffeeSuggestion", "type" : "String", "desc" : "" }
+          ],
+          "map" : {
+            "result.coffeeSuggestion" : "in.coffeeSuggestion"
+          }
+        }
+      },
+      "tags" : [
+        "connector"
+      ],
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 },
+        "icon" : "res:/webContent/icons/coffee-cup.png"
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f5" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "CallSubEnd",
+      "visual" : {
+        "at" : { "x" : 528, "y" : 64 },
+        "labelOffset" : { "x" : 13, "y" : 33 }
+      }
+    }, {
+      "id" : "f5",
+      "type" : "Script",
+      "name" : "Get Current Hour",
+      "config" : {
+        "output" : {
+          "code" : [
+            "import java.time.LocalDateTime;",
+            "",
+            "out.hour = LocalDateTime.now().getHour();"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 232, "y" : 64 }
+      },
+      "connect" : [
+        { "id" : "f6", "to" : "f7", "color" : "default" }
+      ]
+    }, {
+      "id" : "f7",
+      "type" : "Script",
+      "name" : "Suggest a coffee or tea",
+      "config" : {
+        "output" : {
+          "code" : [
+            "if (out.hour >= 23 || out.hour < 6) {",
+            "  out.coffeeSuggestion = \"Herbal Tea\";",
+            "} else if (out.hour >= 6 && out.hour < 11) {",
+            "  out.coffeeSuggestion = \"Espresso\";",
+            "} else if (out.hour >= 11 && out.hour < 15) {",
+            "  out.coffeeSuggestion = \"Cappuccino\";",
+            "} else if (out.hour >= 15 && out.hour < 18) {",
+            "  out.coffeeSuggestion = \"Flat White\";",
+            "} else {",
+            "  out.coffeeSuggestion = \"Decaf\";",
+            "}"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 392, "y" : 64 }
+      },
+      "connect" : [
+        { "id" : "f8", "to" : "f1" }
+      ]
+    } ]
+}
